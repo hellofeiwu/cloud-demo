@@ -4,7 +4,7 @@ import com.sun.javafx.beans.IDProperty;
 import javax.persistence.Entity;
 import java.io.Serializable;
 
-@Entity
+//@Entity
 public class User implements Serializable {
     private static final long serialVersionID = 1L;
     /**
