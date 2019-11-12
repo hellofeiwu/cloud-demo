@@ -2,14 +2,16 @@ package com.domain.clouddemo.clouddemo.domain;
 import com.sun.javafx.beans.IDProperty;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 
-//@Entity
+@Entity
 public class User implements Serializable {
     private static final long serialVersionID = 1L;
     /**
      * 用户数据库主键
      */
+    @Id
     private Long id;
 
     /**
