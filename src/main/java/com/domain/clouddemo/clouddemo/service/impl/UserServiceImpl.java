@@ -25,11 +25,29 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional
-    public User save(UserDto userDto) {
-        User user = this.userRepository.findOne(userDto.getId());
+    public User create(UserDto userDto) {
+        User user = null;
+        if (null != userDto.getId()) {
+            user = this.userRepository.findOne(userDto.getId());
+        }
+
         if(null == user) {
             user = new User();
         }
+
+        user.setNickname(userDto.getNickname());
+        user.setAvatar(userDto.getAvatar());
+        return this.userRepository.save(user);
+    }
+
+    @Transactional
+    public User update(UserDto userDto) {
+        User user  = this.userRepository.findOne(userDto.getId());
+
+        if(null == user) {
+            return null;
+        }
+
         user.setNickname(userDto.getNickname());
         user.setAvatar(userDto.getAvatar());
         return this.userRepository.save(user);
