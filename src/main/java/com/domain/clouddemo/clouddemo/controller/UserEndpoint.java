@@ -15,8 +15,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/users")
 public class UserEndpoint {
-    @Autowired
-    private UserService userService;
+
 
     @RequestMapping(method = RequestMethod.POST)
     public UserDto create(@RequestBody UserDto userDto) {
